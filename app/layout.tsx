@@ -1,9 +1,11 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
-	title: "One Task At A Time",
-	description: "One Task At A Time Landing Page by devwithzain",
+	title: "SupaDupa - Let's build some good companies!",
+	description: "SupaDupa website clone by devwithzain",
 };
+
 export default function RootLayout({
 	children,
 }: {
