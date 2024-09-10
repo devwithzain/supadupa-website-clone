@@ -2,7 +2,7 @@
 import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { Footer, Navbar, Preload } from "@/components";
+import { Footer, Hero, Preload } from "@/components";
 
 export default function App() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +30,7 @@ export default function App() {
 			<AnimatePresence mode="wait">{isLoading && <Preload />}</AnimatePresence>
 			{!isLoading && (
 				<>
-					<Navbar />
+					<Hero />
 					<Footer />
 				</>
 			)}

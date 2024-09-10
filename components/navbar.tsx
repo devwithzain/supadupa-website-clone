@@ -10,7 +10,7 @@ export default function Navbar() {
 	return (
 		<>
 			<motion.nav
-				className="w-full h-[15vh] px-10 fixed top-0 left-0 z-50 backdrop-blur-[5px] flex items-center justify-between"
+				className="w-full py-3 padding-x fixed top-0 left-0 z-50 backdrop-blur-[5px] flex items-center justify-between"
 				initial="hidden"
 				whileInView="vissible"
 				variants={navVariants}>

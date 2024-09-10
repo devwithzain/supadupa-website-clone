@@ -15,3 +15,9 @@ body {
 	src: url("../font/Bricolage.woff2");
 	font-family: Bricolage;
 }
+
+@layer utilities {
+	.padding-x {
+		@apply px-[30px];
+	}
+}
