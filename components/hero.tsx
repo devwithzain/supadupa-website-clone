@@ -3,19 +3,76 @@ import Link from "next/link";
 import Navbar from "./navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import { arrowDown, heroCircle } from "@/public";
 
 export default function Hero() {
+	const containerRef = useRef<HTMLDivElement | null>(null);
+	const textRef = useRef<HTMLSpanElement | null>(null);
+
+	useEffect(() => {
+		resizeText();
+
+		window.addEventListener("resize", resizeText);
+
+		return () => {
+			window.removeEventListener("resize", resizeText);
+		};
+	}, []);
+
+	const resizeText = () => {
+		const container = containerRef.current;
+		const text = textRef.current;
+
+		if (!container || !text) {
+			return;
+		}
+
+		const containerWidth = container.offsetWidth;
+		let min = 1;
+		let max = 2500;
+
+		while (min <= max) {
+			const mid = Math.floor((min + max) / 2);
+			text.style.fontSize = mid + "px";
+
+			if (text.offsetWidth <= containerWidth) {
+				min = mid + 1;
+			} else {
+				max = mid - 1;
+			}
+		}
+
+		text.style.fontSize = max + "px";
+	};
+
 	return (
 		<div className="w-full min-h-screen flex flex-col items-center justify-center padding-x gap-10">
 			<Navbar />
-			<div className="flex flex-col justify-start w-full">
+			<div
+				className="flex flex-col justify-start w-full"
+				ref={containerRef}>
 				<h1 className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight">
 					Welcome to the world of
 				</h1>
-				<h1 className="text-[250px] text-[#9FE870] font-bold leading-[200px] tracking-tighter">
-					Supa Dupa
-				</h1>
+				<span
+					className="flex text-[250px] text-[#9FE870] font-bold leading-[200px] tracking-tighter mx-auto whitespace-nowrap text-center mt-20"
+					ref={textRef}>
+					{"SupaDupa".split("").map((item: string, i: number) => (
+						<motion.p
+							initial={{ y: "100%" }}
+							whileInView={{ y: 0 }}
+							transition={{
+								delay: i * 0.08,
+								duration: 1,
+								ease: [0.4, 0, 0.2, 1],
+							}}
+							viewport={{ once: true }}
+							key={i}>
+							{item}
+						</motion.p>
+					))}
+				</span>
 			</div>
 			<div className="w-full flex flex-col gap-10 relative">
 				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
@@ -43,7 +100,22 @@ export default function Hero() {
 						/>
 					</motion.div>
 				</div>
-				<div className="w-full border-b border-[#9FE870] py-10" />
+				<motion.div
+					initial={{ borderTopWidth: 0, width: "0%" }}
+					viewport={{ once: true }}
+					whileInView={{
+						borderTopWidth: 1,
+						width: "100%",
+						borderColor: "#9FE870",
+						origin: "left",
+					}}
+					transition={{
+						duration: 0.8,
+						delay: 0.5,
+						ease: "easeInOut",
+					}}
+					className="w-full mt-20"
+				/>
 				<div className="w-full flex justify-between relative">
 					<div className="flex flex-col gap-5 relative">
 						<Image
