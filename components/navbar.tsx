@@ -29,18 +29,21 @@ export default function Navbar() {
 						nl
 					</button>
 
-					<button className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3">
-						<Image
-							src={blackCircle}
-							alt="blackCircle"
-							width={20}
-							height={20}
-						/>
-						<TextHover
-							titile1="Menu"
-							titile2="Menu"
-						/>
-					</button>
+					<div className="group">
+						<button className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3">
+							<Image
+								src={blackCircle}
+								alt="blackCircle"
+								width={20}
+								height={20}
+								className="group-hover:rotate-[60deg] transition-all duration-300 ease-linear"
+							/>
+							<TextHover
+								titile1="Menu"
+								titile2="Menu"
+							/>
+						</button>
+					</div>
 				</div>
 			</motion.nav>
 		</>

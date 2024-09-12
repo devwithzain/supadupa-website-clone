@@ -18,7 +18,7 @@ export default function Hero() {
 				</h1>
 			</div>
 			<div className="w-full flex flex-col gap-10 relative">
-				<div className="w-[600px] h-[400px] absolute left-64 -top-10 rounded-lg">
+				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
 					<video
 						src="./heroVideo.mp4"
 						autoPlay
