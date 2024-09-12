@@ -1,11 +1,29 @@
-import { Marquee } from "@/components";
-import { whatwedoImg1 } from "@/public";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { Marquee } from "@/components";
+import { motion } from "framer-motion";
+import { whatwedoItems } from "@/constants";
+import { whatwedoCircleImg } from "@/public";
 
 export default function Whatwedo() {
 	return (
-		<div className="w-full py-20 bg-[#FFD7EF]">
+		<div className="w-full py-20 bg-[#FFD7EF] relative">
+			<motion.div
+				animate={{ rotate: [-360, 360] }}
+				transition={{
+					repeat: Infinity,
+					repeatType: "loop",
+					duration: 20,
+					ease: "linear",
+				}}
+				className="flex items-center absolute -top-10 right-40">
+				<Image
+					src={whatwedoCircleImg}
+					alt="heroCircleImg"
+					width={120}
+					height={120}
+				/>
+			</motion.div>
 			<Marquee
 				className="text-[#260A2F]"
 				titile1="What we do"
@@ -22,38 +40,50 @@ export default function Whatwedo() {
 				</div>
 			</div>
 			<div className="w-full padding-x py-20">
-				<div className="w-full p-20 flex justify-between rounded-[30px] gap-10 bg-[#260A2F]">
-					<div className="w-1/2 h-full flex flex-col gap-14">
-						<div className="flex flex-col gap-2">
-							<h4 className="text-[24px] text-[#FFD7EF] leading-tight tracking-tighter">
-								SDG, ESG, B-corp & Steward Ownership
-							</h4>
-
-							<h1 className="text-[80px] text-[#FFD7EF] font-bold leading-[80px] tracking-tighter">
-								Business <br /> Development
-							</h1>
-							<h4 className="text-[20px] text-[#FFD7EF] leading-normal tracking-tighter">
-								Implementing next generation business models & frameworks that
-								drive <br /> positive change for your organization.
-							</h4>
+				{whatwedoItems.map((item) => (
+					<div
+						className="w-full p-20 flex justify-between rounded-[30px] gap-10"
+						style={{ backgroundColor: item.bgColor }}
+						key={item.id}>
+						<div className="w-1/2 h-full flex flex-col gap-14">
+							<div className="flex flex-col gap-2">
+								<h4
+									className="text-[24px] leading-tight tracking-tighter"
+									style={{ color: item.textColor }}>
+									{item.title}
+								</h4>
+								<h2
+									className="text-[80px] font-bold leading-[80px] tracking-tighter"
+									style={{ color: item.textColor }}>
+									{item.heading.part1}
+									<br />
+									{item.heading.part2}
+								</h2>
+								<h4
+									className="text-[20px] leading-normal tracking-tighter"
+									style={{ color: item.textColor }}>
+									{item.para}
+								</h4>
+							</div>
+							<div className="w-fit flex flex-col gap-2">
+								<Link
+									style={{ color: item.linkColor }}
+									className="text-[18px] font-normal leading-tight tracking-tight"
+									href="/">
+									{item.href}
+								</Link>
+								<div className="w-full h-[1px] rounded-lg bg-secondary" />
+							</div>
 						</div>
-						<div className="w-fit flex flex-col gap-2">
-							<Link
-								className="text-[18px] text-secondary font-normal leading-tight tracking-tight"
-								href="/">
-								Book an inspiration workshop
-							</Link>
-							<div className="w-full h-[1px] rounded-lg bg-secondary" />
+						<div className="w-1/2 h-full flex items-center justify-center">
+							<Image
+								src={item.img}
+								alt="whatwedoImg"
+								className="w-[80%] object-cover"
+							/>
 						</div>
 					</div>
-					<div className="w-1/2 h-full flex items-center justify-center">
-						<Image
-							src={whatwedoImg1}
-							alt="whatwedoImg"
-							className="w-[80%] object-cover"
-						/>
-					</div>
-				</div>
+				))}
 			</div>
 			<div className="w-full flex justify-start items-center padding-x py-20">
 				<div className="w-[72%] flex flex-col gap-7">

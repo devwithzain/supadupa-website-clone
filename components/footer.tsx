@@ -118,7 +118,6 @@ export default function Footer() {
 						transition={{
 							duration: 1,
 							ease: "easeInOut",
-							type: "spring",
 						}}
 					/>
 					<div className="w-full flex items-center justify-between py-4">
@@ -131,7 +130,6 @@ export default function Footer() {
 							transition={{
 								duration: 1,
 								ease: "easeInOut",
-								type: "spring",
 							}}
 							className="text-[#9FE870] text-[18px]">
 							Supa Dupa 2024
@@ -145,7 +143,6 @@ export default function Footer() {
 							transition={{
 								duration: 1,
 								ease: "easeInOut",
-								type: "spring",
 							}}
 							className="text-[#9FE870] text-[18px]">
 							Privacy Statement

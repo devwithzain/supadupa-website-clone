@@ -9,6 +9,7 @@ body::-webkit-scrollbar {
 body {
 	font-family: Bricolage;
 	background-color: #163300;
+	overflow-x: hidden;
 }
 
 @font-face {

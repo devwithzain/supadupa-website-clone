@@ -6,3 +6,7 @@ export { default as companiesImg } from './companiesImg.svg';
 export { default as circle2 } from './circle2.svg';
 export { default as circle1 } from './circle1.svg';
 export { default as whatwedoImg1 } from './whatwedoImg1.png';
+export { default as whatwedoImg2 } from './whatwedoImg2.png';
+export { default as whatwedoImg3 } from './whatwedoImg3.png';
+export { default as whatwedoImg4 } from './whatwedoImg4.png';
+export { default as whatwedoCircleImg } from './whatwedoCircleImg.svg';
