@@ -1,8 +1,6 @@
 "use client";
 import { useRef } from "react";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
-import Image from "next/image";
-import { circle1, circle2 } from "@/public";
 
 export default function Journey() {
 	const container = useRef(null);
@@ -10,7 +8,7 @@ export default function Journey() {
 		target: container,
 		offset: ["start end", "center center"],
 	});
-	const scale = useTransform(scrollYProgress, [0, 1], [0.93, 0.98]);
+	const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 0.98]);
 	const scaleSmooth = useSpring(scale);
 
 	return (
