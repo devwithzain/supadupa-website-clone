@@ -1,11 +1,17 @@
-import Link from "next/link";
+"use client";
 import Image from "next/image";
-import { Marquee } from "@/components";
-import { motion } from "framer-motion";
+import { useRef } from "react";
 import { whatwedoItems } from "@/constants";
+import { Marquee, Card } from "@/components";
 import { whatwedoCircleImg } from "@/public";
+import { motion, useScroll } from "framer-motion";
 
 export default function Whatwedo() {
+	const container = useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: container,
+		offset: ["start start", "end end"],
+	});
 	return (
 		<div className="w-full py-20 bg-[#FFD7EF] relative">
 			<motion.div
@@ -39,53 +45,30 @@ export default function Whatwedo() {
 					</p>
 				</div>
 			</div>
-			<div className="w-full padding-x py-20">
-				{whatwedoItems.map((item) => (
-					<div
-						className="w-full p-20 flex justify-between rounded-[30px] gap-10"
-						style={{ backgroundColor: item.bgColor }}
-						key={item.id}>
-						<div className="w-1/2 h-full flex flex-col gap-14">
-							<div className="flex flex-col gap-2">
-								<h4
-									className="text-[24px] leading-tight tracking-tighter"
-									style={{ color: item.textColor }}>
-									{item.title}
-								</h4>
-								<h2
-									className="text-[80px] font-bold leading-[80px] tracking-tighter"
-									style={{ color: item.textColor }}>
-									{item.heading.part1}
-									<br />
-									{item.heading.part2}
-								</h2>
-								<h4
-									className="text-[20px] leading-normal tracking-tighter"
-									style={{ color: item.textColor }}>
-									{item.para}
-								</h4>
-							</div>
-							<div className="w-fit flex flex-col gap-2">
-								<Link
-									style={{ color: item.linkColor }}
-									className="text-[18px] font-normal leading-tight tracking-tight"
-									href="/">
-									{item.href}
-								</Link>
-								<div className="w-full h-[1px] rounded-lg bg-secondary" />
-							</div>
-						</div>
-						<div className="w-1/2 h-full flex items-center justify-center">
-							<Image
-								src={item.img}
-								alt="whatwedoImg"
-								className="w-[80%] object-cover"
-							/>
-						</div>
-					</div>
-				))}
+			<div
+				ref={container}
+				className="w-full padding-x py-20">
+				{whatwedoItems.map((item, i) => {
+					return (
+						<Card
+							key={item.id}
+							i={i}
+							title={item.title}
+							para={item.para}
+							heading1={item.heading1}
+							heading2={item.heading2}
+							src={item.img}
+							href={item.href}
+							bgColor={item.bgColor}
+							linkColor={item.linkColor}
+							textColor={item.textColor}
+							progress={scrollYProgress}
+							range={[i * 0.25, 1]}
+						/>
+					);
+				})}
 			</div>
-			<div className="w-full flex justify-start items-center padding-x py-20">
+			<div className="w-full flex justify-start items-center padding-x">
 				<div className="w-[72%] flex flex-col gap-7">
 					<h4 className="text-[24px] text-[#260A2F] leading-tight tracking-tighter">
 						Pioneers for the new normal
