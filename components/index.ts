@@ -6,3 +6,4 @@ export { default as Companies } from "./companies";
 export { default as Marquee } from "./marquee";
 export { default as Journey } from "./journey";
 export { default as Whatwedo } from "./whatwedo";
+export { default as Card } from "./wwd-cards";
