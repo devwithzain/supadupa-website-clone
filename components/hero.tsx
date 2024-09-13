@@ -76,7 +76,14 @@ export default function Hero() {
 			</div>
 			<div className="w-full flex flex-col gap-10 relative">
 				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
-					<video
+					<motion.video
+						initial={{ y: 20, opacity: 0.5, scale: 0.5 }}
+						whileInView={{ y: 0, opacity: 1, scale: 1 }}
+						transition={{
+							duration: 1,
+							ease: "easeInOut",
+						}}
+						viewport={{ once: true }}
 						src="./heroVideo.mp4"
 						autoPlay
 						loop

@@ -3,6 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
+	Collaboration,
 	Companies,
 	Footer,
 	Hero,
@@ -10,6 +11,7 @@ import {
 	Preload,
 	Whatwedo,
 } from "@/components";
+import Slider from "@/components/slider";
 
 export default function App() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -41,6 +43,8 @@ export default function App() {
 					<Journey />
 					<Companies />
 					<Whatwedo />
+					<Slider />
+					<Collaboration />
 					<Footer />
 				</>
 			)}
