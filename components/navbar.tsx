@@ -65,8 +65,9 @@ export default function Navbar() {
 										{links.map((link) => (
 											<div key={link.id}>
 												<Link
-													href={link.href}
-													className="text-[16px] font-semibold capitalize text-[#260A2F] bg-secondary leading-tight tracking-tight">
+													href={`#${link.href}`}
+													className="text-[16px] font-semibold capitalize text-[#260A2F] bg-secondary leading-tight tracking-tight"
+													onClick={() => setActive(!active)}>
 													{link.title}
 												</Link>
 											</div>

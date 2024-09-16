@@ -13,6 +13,7 @@ export default function Journey() {
 
 	return (
 		<motion.div
+			id="our-ambition"
 			className="w-full h-screen flex items-center justify-center rounded-[30px] py-10 bg-[#FFD7EF] transition-all duration-300 ease-linear mb-20"
 			style={{ scale: scaleSmooth }}
 			ref={container}>

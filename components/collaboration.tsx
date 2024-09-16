@@ -26,7 +26,9 @@ export default function Collaboration() {
 	};
 
 	return (
-		<div className="w-full bg-[#260A2F] py-10 padding-x">
+		<div
+			id="our-impact"
+			className="w-full bg-[#260A2F] py-10 padding-x">
 			<div className="w-full flex justify-start items-center">
 				<div className="w-[72%] flex flex-col gap-4">
 					<h4 className="text-[24px] text-[#FFD7EF] leading-tight tracking-tighter">

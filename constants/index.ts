@@ -4,27 +4,27 @@ export const links = [
    {
       id: 1,
       title: "Our ambition",
-      href: "/"
+      href: "our-ambition"
    },
    {
       id: 2,
       title: "What we do",
-      href: "/"
+      href: "what-we-do"
    },
    {
       id: 3,
       title: "Transformation",
-      href: "/"
+      href: "transformation"
    },
    {
       id: 4,
       title: "Our impact",
-      href: "/"
+      href: "our-impact"
    },
    {
       id: 5,
       title: "Get in touch",
-      href: "/"
+      href: "get-in-touch"
    }
 ];
 

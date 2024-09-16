@@ -13,7 +13,9 @@ export default function Whatwedo() {
 		offset: ["start start", "end end"],
 	});
 	return (
-		<div className="w-full py-20 bg-[#FFD7EF] relative">
+		<div
+			id="what-we-do"
+			className="w-full py-20 bg-[#FFD7EF] relative">
 			<motion.div
 				animate={{ rotate: [-360, 360] }}
 				transition={{
@@ -67,24 +69,6 @@ export default function Whatwedo() {
 						/>
 					);
 				})}
-			</div>
-			<div className="w-full flex justify-start items-center padding-x">
-				<div className="w-[72%] flex flex-col gap-7">
-					<h4 className="text-[24px] text-[#260A2F] leading-tight tracking-tighter">
-						Pioneers for the new normal
-					</h4>
-
-					<h1 className="text-[80px] text-[#260A2F] font-bold leading-[80px] tracking-tighter">
-						Business transformation is a journey that demands time, space and a
-						contagious dose of positive energy.
-					</h1>
-					<h4 className="text-[24px] text-[#260A2F] leading-normal tracking-tighter">
-						Our philosophy is that everyone knows their destination; sometimes,
-						you just need a guide who knows the way to get there. With our
-						transformation journey process, we tailor a unique path aligned with
-						your company&apos;s specific needs.
-					</h4>
-				</div>
 			</div>
 		</div>
 	);

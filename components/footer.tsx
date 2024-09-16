@@ -8,7 +8,9 @@ import Link from "next/link";
 export default function Footer() {
 	return (
 		<>
-			<div className="w-full h-screen flex flex-col items-center padding-x justify-between">
+			<div
+				id="get-in-touch"
+				className="w-full h-screen flex flex-col items-center padding-x justify-between">
 				<Marquee
 					titile1="Get in touch"
 					titile2="Get in touch"
