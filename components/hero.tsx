@@ -1,4 +1,5 @@
 "use client";
+import gsap from "gsap";
 import Link from "next/link";
 import Navbar from "./navbar";
 import Image from "next/image";
@@ -7,8 +8,8 @@ import { useEffect, useRef } from "react";
 import { arrowDown, heroCircle } from "@/public";
 
 export default function Hero() {
-	const containerRef = useRef<HTMLDivElement | null>(null);
 	const textRef = useRef<HTMLSpanElement | null>(null);
+	const containerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
 		resizeText();
@@ -46,6 +47,41 @@ export default function Hero() {
 		text.style.fontSize = max + "px";
 	};
 
+	const plane1 = useRef(null);
+	let requestAnimationFrameId: any = null;
+	let xForce = 0;
+	let yForce = 0;
+	const easing = 0.08;
+	const speed = 0.01;
+
+	const manageMouseMove = (e: any) => {
+		const { movementX, movementY } = e;
+		xForce += movementX * speed;
+		yForce += movementY * speed;
+
+		if (requestAnimationFrameId == null) {
+			requestAnimationFrameId = requestAnimationFrame(animate);
+		}
+	};
+
+	const lerp = (start: number, target: number, amount: number) =>
+		start * (0.8 - amount) + target * amount;
+
+	const animate = () => {
+		xForce = lerp(xForce, 0, easing);
+		yForce = lerp(yForce, 0, easing);
+		gsap.set(plane1.current, { x: `+=${xForce}`, y: `+=${yForce}` });
+		if (Math.abs(xForce) < 0.01) xForce = 0;
+		if (Math.abs(yForce) < 0.01) yForce = 0;
+
+		if (xForce != 0 || yForce != 0) {
+			requestAnimationFrame(animate);
+		} else {
+			cancelAnimationFrame(requestAnimationFrameId);
+			requestAnimationFrameId = null;
+		}
+	};
+
 	return (
 		<div className="w-full min-h-screen flex flex-col items-center justify-center padding-x gap-10">
 			<Navbar />
@@ -74,9 +110,14 @@ export default function Hero() {
 					))}
 				</span>
 			</div>
-			<div className="w-full flex flex-col gap-10 relative">
+			<div
+				className="w-full flex flex-col gap-10 relative"
+				onMouseMove={(e) => {
+					manageMouseMove(e);
+				}}>
 				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
 					<motion.video
+						ref={plane1}
 						initial={{ y: 20, opacity: 0.5, scale: 0.5 }}
 						whileInView={{ y: 0, opacity: 1, scale: 1 }}
 						transition={{
