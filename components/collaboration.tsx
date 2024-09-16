@@ -1,15 +1,13 @@
 "use client";
+import "swiper/css";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { collaborationItems, collaborationSliderItems } from "@/constants";
 import { arrowLeft, arrowRight, collaborationCircle } from "@/public";
+import { collaborationItems, collaborationSliderItems } from "@/constants";
 
-import Swiper from "swiper";
-import "swiper/swiper-bundle.css";
-import { Navigation, Pagination } from "swiper/modules";
-
-Swiper.use([Pagination, Navigation]);
 export default function Collaboration() {
 	const container = useRef(null);
 	const { scrollYProgress } = useScroll({
@@ -18,29 +16,15 @@ export default function Collaboration() {
 	});
 	const sc = useTransform(scrollYProgress, [0, 1], [100, -1500]);
 
-	const swiperRef = useRef<Swiper | null>(null);
+	const swiperRef = useRef<any | null>(null);
 
-	useEffect(() => {
-		swiperRef.current = new Swiper(".card-wrapper", {
-			loop: true,
-			spaceBetween: 30,
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-			breakpoints: {
-				0: {
-					slidesPerView: 1,
-				},
-				768: {
-					slidesPerView: 1,
-				},
-				1024: {
-					slidesPerView: 1,
-				},
-			},
-		});
-	}, []);
+	const handlePrev = () => {
+		if (swiperRef.current) swiperRef.current.slidePrev();
+	};
+	const handleNext = () => {
+		if (swiperRef.current) swiperRef.current.slideNext();
+	};
+
 	return (
 		<div className="w-full bg-[#260A2F] py-10 padding-x">
 			<div className="w-full flex justify-start items-center">
@@ -75,12 +59,17 @@ export default function Collaboration() {
 				</motion.div>
 			</div>
 			<div className="w-full pb-10 bg-[#9FE870] rounded-[20px]">
-				<div className="swiper">
-					<div className="card-wrapper p-5 overflow-hidden">
-						<ul className="swiper-wrapper">
-							{collaborationSliderItems.map((item) => (
+				<div className="p-5 overflow-hidden">
+					<Swiper
+						modules={[Navigation]}
+						loop
+						spaceBetween={30}
+						slidesPerView={1}
+						onSwiper={(swiper) => (swiperRef.current = swiper)}>
+						{collaborationSliderItems.map((item) => (
+							<SwiperSlide key={item.id}>
 								<motion.div
-									className="w-full p-10 !flex justify-between rounded-[30px] gap-20 swiper-slide"
+									className="w-full p-14 flex justify-between rounded-[30px] gap-20"
 									key={item.id}>
 									<div className="w-1/2 h-full flex flex-col gap-14 pt-10">
 										<Image
@@ -126,27 +115,30 @@ export default function Collaboration() {
 										</motion.div>
 									</motion.div>
 								</motion.div>
-							))}
-						</ul>
-						<div className="flex !relative w-full ml-10">
-							<div className="bg-[#FFD7EF] hover:bg-[#FFEB69] transition-all duration-200 ease-linear cursor-pointer px-10 py-[17px] rounded-[30px]">
-								<Image
-									src={arrowLeft}
-									alt="arrowLeft"
-									className="!w-[55px] swiper-button-prev"
-									width={55}
-									height={55}
-								/>
-							</div>
-							<div className="!absolute !left-20 bg-[#FFD7EF] hover:bg-[#FFEB69] transition-all duration-200 ease-linear cursor-pointer px-10 py-[17px] rounded-[30px] ml-3">
-								<Image
-									src={arrowRight}
-									alt="arrowRight"
-									className="!w-[55px] swiper-button-next"
-									width={55}
-									height={55}
-								/>
-							</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+					<div className="flex w-fit gap-2 pl-10">
+						<div
+							onClick={handlePrev}
+							className="bg-[#FFD7EF] hover:bg-[#FFEB69] transition-all duration-200 ease-linear cursor-pointer px-3 py-2 rounded-[30px]">
+							<Image
+								src={arrowLeft}
+								alt="arrowLeft"
+								className="!w-[55px]"
+								width={55}
+								height={55}
+							/>
+						</div>
+						<div
+							onClick={handleNext}
+							className="bg-[#FFD7EF] hover:bg-[#FFEB69] transition-all duration-200 ease-linear cursor-pointer px-3 py-2 rounded-[30px]">
+							<Image
+								src={arrowRight}
+								alt="arrowRight"
+								width={55}
+								height={55}
+							/>
 						</div>
 					</div>
 				</div>

@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { links } from "@/constants";
 import TextHover from "./text-hover";
-import { motion } from "framer-motion";
 import { navVariants } from "@/motion";
 import { blackCircle, logo } from "@/public";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Navbar() {
+	const [active, setActive] = useState(false);
 	return (
 		<>
 			<motion.nav
@@ -29,8 +32,10 @@ export default function Navbar() {
 						nl
 					</button>
 
-					<div className="group">
-						<button className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3">
+					<div className="relative">
+						<button
+							className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3 group"
+							onClick={() => setActive(!active)}>
 							<Image
 								src={blackCircle}
 								alt="blackCircle"
@@ -43,6 +48,33 @@ export default function Navbar() {
 								titile2="Menu"
 							/>
 						</button>
+						<motion.div
+							initial={{ scaleY: 0 }}
+							animate={active ? { scaleY: 1 } : { scaleY: 0 }}
+							transition={{
+								duration: 0.4,
+								ease: "easeInOut",
+							}}>
+							<AnimatePresence mode="wait">
+								{active && (
+									<motion.div
+										className="absolute flex flex-col gap-2 bg-secondary pl-5 pr-16 py-8 rounded-[20px] right-0 mt-8"
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}>
+										{links.map((link) => (
+											<div key={link.id}>
+												<Link
+													href={link.href}
+													className="text-[16px] font-semibold capitalize text-[#260A2F] bg-secondary leading-tight tracking-tight">
+													{link.title}
+												</Link>
+											</div>
+										))}
+									</motion.div>
+								)}
+							</AnimatePresence>
+						</motion.div>
 					</div>
 				</div>
 			</motion.nav>

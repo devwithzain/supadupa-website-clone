@@ -35,20 +35,51 @@ export default function PreLoad() {
 			variants={slideUp}
 			initial="initial"
 			exit="exit"
-			className="h-screen w-screen flex items-center justify-center fixed z-20 bg-[#202020] ">
+			className="h-screen w-screen flex items-center justify-center fixed z-20 bg-[#9FE870] ">
 			{dimension.width > 0 && (
 				<>
-					<motion.p
-						className="flex text-white text-[42px] items-center absolute z-10"
+					<motion.div
+						className="flex gap-10 items-center absolute z-10 overflow-hidden"
 						variants={opacity}
 						initial="initial"
 						animate="enter">
-						<span className="block w-[10px] h-[10px] bg-white rounded-full mr-[10px]" />
-						Bella Han
-					</motion.p>
+						<motion.p
+							initial={{ y: -200 }}
+							animate={{ y: 0 }}
+							transition={{
+								duration: 1.5,
+								delay: 0.5,
+								ease: [0.76, 0, 0.24, 1],
+							}}
+							className="text-[#163300] text-[60px] leading-tight tracking-tight font-medium">
+							Let&apos;s Start
+						</motion.p>
+						<motion.img
+							initial={{ rotate: 0 }}
+							animate={{ rotate: 90 }}
+							transition={{
+								duration: 1,
+								ease: [0.76, 0, 0.24, 1],
+							}}
+							src="/loadingImg.svg"
+							alt="loadingImg"
+							className="w-[250px] h-[250px]"
+						/>
+						<motion.p
+							initial={{ y: 200 }}
+							animate={{ y: 0 }}
+							transition={{
+								duration: 1.5,
+								delay: 0.5,
+								ease: [0.76, 0, 0.24, 1],
+							}}
+							className="text-[#163300] text-[60px] leading-tight tracking-tight font-medium">
+							Something good
+						</motion.p>
+					</motion.div>
 					<svg className="absolute top-0 w-full h-calc-100">
 						<motion.path
-							className="fill-[#202020]"
+							className="fill-[#9FE870]"
 							variants={curve}
 							initial="initial"
 							exit="exit"

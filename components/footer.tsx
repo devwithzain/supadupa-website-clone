@@ -16,7 +16,7 @@ export default function Footer() {
 				/>
 				<div className="w-[80%] flex flex-col gap-10">
 					<div>
-						<h1 className="text-[60px] text-[#ffeb69] font-bold leading-[55px] tracking-tight text-center">
+						<h1 className="text-[60px] text-[#ffeb69] font-bold leading-[62px] tracking-tight text-center">
 							Everybody knows where they want to go. But sometimes you need a
 							guide who knows how to get there.
 						</h1>
