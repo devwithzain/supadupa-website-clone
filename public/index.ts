@@ -23,3 +23,4 @@ export { default as hartman1 } from './hartman1.png';
 export { default as collaborationCircle } from './collaborationCircle.svg';
 export { default as saionBlack } from './saionBlack.png';
 export { default as hartmanBlack } from './hartmanBlack.png';
+export { default as loadingImg } from './loadingImg.svg';

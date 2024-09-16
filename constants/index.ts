@@ -1,5 +1,34 @@
 import { collaborationCircle, eshuis, haafkes, hartman, hartman1, hartmanBlack, pentuin, saion, saion1, saionBlack, stewards, whatwedoImg1, whatwedoImg2, whatwedoImg3, whatwedoImg4 } from "@/public";
 
+export const links = [
+   {
+      id: 1,
+      title: "Our ambition",
+      href: "/"
+   },
+   {
+      id: 2,
+      title: "What we do",
+      href: "/"
+   },
+   {
+      id: 3,
+      title: "Transformation",
+      href: "/"
+   },
+   {
+      id: 4,
+      title: "Our impact",
+      href: "/"
+   },
+   {
+      id: 5,
+      title: "Get in touch",
+      href: "/"
+   }
+];
+
+
 export const whatwedoItems = [
    {
       id: 1,
