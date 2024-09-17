@@ -1,11 +1,12 @@
-import { Marquee } from "@/components";
+import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { blackCircle } from "@/public";
-import Image from "next/image";
-import TextHover from "./text-hover";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { TextHover, Marquee } from "@/components";
 
 export default function Footer() {
+	const t = useTranslations("footerContent");
 	return (
 		<>
 			<div
@@ -19,13 +20,12 @@ export default function Footer() {
 				<div className="w-[80%] flex flex-col gap-10">
 					<div>
 						<h1 className="text-[60px] text-[#ffeb69] font-bold leading-[62px] tracking-tight text-center">
-							Everybody knows where they want to go. But sometimes you need a
-							guide who knows how to get there.
+							{t("footerHeading1")}
 						</h1>
 					</div>
 					<div>
 						<p className="text-[25px] text-[#ffeb69] leading-normal tracking-tight text-center">
-							Let’s connect on purpose and explore your journey together.
+							{t("footerHeading2")}
 						</p>
 					</div>
 					<div className="flex items-center justify-center">
@@ -38,8 +38,8 @@ export default function Footer() {
 								className="group-hover:rotate-[60deg] transition-all duration-300 ease-linear"
 							/>
 							<TextHover
-								titile1="Start your journey"
-								titile2="Start your journey"
+								titile1={t("footerBtn")}
+								titile2={t("footerBtn")}
 							/>
 						</button>
 					</div>
@@ -49,7 +49,7 @@ export default function Footer() {
 						<div className="flex flex-col gap-5">
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
-									phone
+									Phone
 								</p>
 								<Link
 									className="text-[30px] font-semibold text-[#9FE870] leading-tight tracking-tight"
@@ -71,7 +71,7 @@ export default function Footer() {
 						<div className="flex flex-col gap-5">
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
-									email
+									E-mail
 								</p>
 								<Link
 									className="text-[30px] font-semibold text-[#9FE870] leading-tight tracking-tight"
@@ -81,7 +81,7 @@ export default function Footer() {
 							</div>
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
-									instagram
+									Instagram
 								</p>
 								<Link
 									className="text-[30px] font-semibold text-[#9FE870] leading-tight tracking-tight"
@@ -95,7 +95,7 @@ export default function Footer() {
 						<div className="flex flex-col gap-10">
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
-									enschede
+									Enschede
 								</p>
 								<Link
 									className="text-[30px] font-semibold text-[#9FE870] leading-tight tracking-tight"
@@ -133,7 +133,7 @@ export default function Footer() {
 								duration: 1,
 								ease: "easeInOut",
 							}}
-							className="text-[#9FE870] text-[18px]">
+							className="text-[#9FE870] text-sm">
 							Supa Dupa 2024
 						</motion.h2>
 						<motion.h2
@@ -146,7 +146,7 @@ export default function Footer() {
 								duration: 1,
 								ease: "easeInOut",
 							}}
-							className="text-[#9FE870] text-[18px]">
+							className="text-[#9FE870] text-sm">
 							Privacy Statement
 						</motion.h2>
 					</div>

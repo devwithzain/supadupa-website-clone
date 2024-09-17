@@ -2,12 +2,13 @@
 import "swiper/css";
 import { useRef } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Navigation } from "swiper/modules";
-import { testimonialsItems } from "@/constants";
 import { arrowLeft, arrowRight } from "@/public";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Slider() {
+	const t = useTranslations("sliderContent");
 	const swiperRef = useRef<any | null>(null);
 
 	const handlePrev = () => {
@@ -24,18 +25,14 @@ export default function Slider() {
 			<div className="w-full flex justify-start items-center padding-x">
 				<div className="w-[72%] flex flex-col gap-7">
 					<h4 className="text-[24px] text-[#260A2F] leading-tight tracking-tighter">
-						Pioneers for the new normal
+						{t("sliderHeading1")}
 					</h4>
 
 					<h1 className="text-[80px] text-[#260A2F] font-bold leading-[80px] tracking-tighter">
-						Business transformation is a journey that demands time, space and a
-						contagious dose of positive energy.
+						{t("sliderHeading2")}
 					</h1>
 					<h4 className="text-[24px] text-[#260A2F] leading-normal tracking-tighter">
-						Our philosophy is that everyone knows their destination; sometimes,
-						you just need a guide who knows the way to get there. With our
-						transformation journey process, we tailor a unique path aligned with
-						your company&apos;s specific needs.
+						{t("sliderHeading3")}
 					</h4>
 				</div>
 			</div>
@@ -47,23 +44,81 @@ export default function Slider() {
 						spaceBetween={30}
 						slidesPerView={2}
 						onSwiper={(swiper) => (swiperRef.current = swiper)}>
-						{testimonialsItems.map((item) => (
-							<SwiperSlide key={item.id}>
-								<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[400px] cursor-grab">
-									<div className="flex flex-col gap-3">
-										<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
-											{item.title}
-										</h2>
-										<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
-											{item.heading}
-										</h2>
-										<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
-											{item.para}
-										</p>
-									</div>
+						<SwiperSlide>
+							<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[450px] cursor-grab">
+								<div className="flex flex-col gap-3">
+									<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
+										{t("title1")}
+									</h2>
+									<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
+										{t("heading1")}
+									</h2>
+									<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
+										{t("para1")}
+									</p>
 								</div>
-							</SwiperSlide>
-						))}
+							</div>
+						</SwiperSlide>
+						<SwiperSlide>
+							<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[450px] cursor-grab">
+								<div className="flex flex-col gap-3">
+									<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
+										{t("title2")}
+									</h2>
+									<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
+										{t("heading2")}
+									</h2>
+									<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
+										{t("para2")}
+									</p>
+								</div>
+							</div>
+						</SwiperSlide>
+						<SwiperSlide>
+							<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[450px] cursor-grab">
+								<div className="flex flex-col gap-3">
+									<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
+										{t("title3")}
+									</h2>
+									<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
+										{t("heading3")}
+									</h2>
+									<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
+										{t("para3")}
+									</p>
+								</div>
+							</div>
+						</SwiperSlide>
+						<SwiperSlide>
+							<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[450px] cursor-grab">
+								<div className="flex flex-col gap-3">
+									<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
+										{t("title4")}
+									</h2>
+									<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
+										{t("heading4")}
+									</h2>
+									<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
+										{t("para4")}
+									</p>
+								</div>
+							</div>
+						</SwiperSlide>
+						<SwiperSlide>
+							<div className="bg-[#260A2F] p-7 rounded-[30px] swiper-slide min-h-[450px] cursor-grab">
+								<div className="flex flex-col gap-3">
+									<h2 className="text-[70px] font-bold leading-tight text-[#FFD7EF]">
+										{t("title5")}
+									</h2>
+									<h2 className="text-[40px] font-medium leading-tight text-[#FFD7EF]">
+										{t("heading5")}
+									</h2>
+									<p className="text-[20px] font-normal leading-normal text-[#FFD7EF] tracking-tight">
+										{t("para5")}
+									</p>
+								</div>
+							</div>
+						</SwiperSlide>
 					</Swiper>
 					<div className="flex mt-6 w-full gap-2">
 						<div

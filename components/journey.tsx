@@ -1,8 +1,10 @@
 "use client";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 
 export default function Journey() {
+	const t = useTranslations("journeyContent");
 	const container = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: container,
@@ -19,8 +21,7 @@ export default function Journey() {
 			ref={container}>
 			<div className="w-[70%] h-full flex items-center justify-center">
 				<h1 className="text-[100px] text-[#260A2F] font-bold leading-none tracking-tight text-center">
-					At Supa Dupa we help companies on their journey to do good business in
-					a sustainable way. Because good business leads to a better future.
+					{t("journeyContent")}
 				</h1>
 			</div>
 			<div className="w-full h-full absolute">

@@ -5,11 +5,21 @@ import { useRef } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import { arrowLeft, arrowRight, collaborationCircle } from "@/public";
-import { collaborationItems, collaborationSliderItems } from "@/constants";
+import {
+	arrowLeft,
+	arrowRight,
+	collaborationCircle,
+	hartman1,
+	hartmanBlack,
+	saion1,
+	saionBlack,
+} from "@/public";
+import { useTranslations } from "next-intl";
+import { collaborationItems } from "@/constants";
 
 export default function Collaboration() {
 	const container = useRef(null);
+	const t = useTranslations("ourImpactContent");
 	const { scrollYProgress } = useScroll({
 		target: container,
 		offset: ["start end", "end start"],
@@ -32,12 +42,11 @@ export default function Collaboration() {
 			<div className="w-full flex justify-start items-center">
 				<div className="w-[72%] flex flex-col gap-4">
 					<h4 className="text-[24px] text-[#FFD7EF] leading-tight tracking-tighter">
-						Our Impact
+						{t("ourImpactHeading1")}
 					</h4>
 
 					<h1 className="text-[80px] text-[#FFD7EF] font-bold leading-[80px] tracking-tighter">
-						We love collaborating with good people, family-owned businesses, and
-						B-Corps!
+						{t("ourImpactHeading2")}
 					</h1>
 				</div>
 			</div>
@@ -68,57 +77,100 @@ export default function Collaboration() {
 						spaceBetween={30}
 						slidesPerView={1}
 						onSwiper={(swiper) => (swiperRef.current = swiper)}>
-						{collaborationSliderItems.map((item) => (
-							<SwiperSlide key={item.id}>
-								<motion.div
-									className="w-full p-14 flex justify-between rounded-[30px] gap-20"
-									key={item.id}>
-									<div className="w-1/2 h-full flex flex-col gap-14 pt-10">
-										<Image
-											src={item.src1}
-											alt="whatwedoImg"
-											className="w-[100px] object-cover text-black"
-										/>
-										<div className="flex flex-col gap-4">
-											<h4 className="text-[40px] leading-tight tracking-tight">
-												{item.title}
+						<SwiperSlide>
+							<motion.div className="w-full p-14 flex justify-between rounded-[30px] gap-20">
+								<div className="w-1/2 h-full flex flex-col gap-14 pt-10">
+									<Image
+										src={hartmanBlack}
+										alt="whatwedoImg"
+										className="w-[100px] object-cover text-black"
+									/>
+									<div className="flex flex-col gap-4">
+										<h4 className="text-[40px] leading-tight tracking-tight">
+											{t("title1")}
+										</h4>
+										<div className="flex flex-col">
+											<h2 className="text-[24px] leading-tight tracking-tighter">
+												{t("heading1")}
+											</h2>
+											<h4 className="text-[24px] leading-tight tracking-tighter">
+												{t("para1")}
 											</h4>
-											<div className="flex flex-col">
-												<h2 className="text-[24px] leading-tight tracking-tighter">
-													{item.para1}
-												</h2>
-												<h4 className="text-[24px] leading-tight tracking-tighter">
-													{item.para2}
-												</h4>
-											</div>
 										</div>
 									</div>
-									<motion.div className="w-1/2 h-full flex items-center justify-center relative">
+								</div>
+								<motion.div className="w-1/2 h-full flex items-center justify-center relative">
+									<Image
+										src={hartman1}
+										alt="img"
+										className="w-full object-cover"
+									/>
+									<motion.div
+										animate={{ rotate: [-360, 360] }}
+										transition={{
+											repeat: Infinity,
+											repeatType: "loop",
+											duration: 20,
+											ease: "linear",
+										}}
+										className="flex items-center absolute -bottom-14 right-20">
 										<Image
-											src={item.src}
-											alt="img"
-											className="w-full object-cover"
+											src={collaborationCircle}
+											alt="heroCircleImg"
+											width={120}
+											height={120}
 										/>
-										<motion.div
-											animate={{ rotate: [-360, 360] }}
-											transition={{
-												repeat: Infinity,
-												repeatType: "loop",
-												duration: 20,
-												ease: "linear",
-											}}
-											className="flex items-center absolute -bottom-14 right-20">
-											<Image
-												src={collaborationCircle}
-												alt="heroCircleImg"
-												width={120}
-												height={120}
-											/>
-										</motion.div>
 									</motion.div>
 								</motion.div>
-							</SwiperSlide>
-						))}
+							</motion.div>
+						</SwiperSlide>
+						<SwiperSlide>
+							<motion.div className="w-full p-14 flex justify-between rounded-[30px] gap-20">
+								<div className="w-1/2 h-full flex flex-col gap-14 pt-10">
+									<Image
+										src={saionBlack}
+										alt="whatwedoImg"
+										className="w-[100px] object-cover text-black"
+									/>
+									<div className="flex flex-col gap-4">
+										<h4 className="text-[40px] leading-tight tracking-tight">
+											{t("title2")}
+										</h4>
+										<div className="flex flex-col">
+											<h2 className="text-[24px] leading-tight tracking-tighter">
+												{t("heading2")}
+											</h2>
+											<h4 className="text-[24px] leading-tight tracking-tighter">
+												{t("para2")}
+											</h4>
+										</div>
+									</div>
+								</div>
+								<motion.div className="w-1/2 h-full flex items-center justify-center relative">
+									<Image
+										src={saion1}
+										alt="img"
+										className="w-full object-cover"
+									/>
+									<motion.div
+										animate={{ rotate: [-360, 360] }}
+										transition={{
+											repeat: Infinity,
+											repeatType: "loop",
+											duration: 20,
+											ease: "linear",
+										}}
+										className="flex items-center absolute -bottom-14 right-20">
+										<Image
+											src={collaborationCircle}
+											alt="heroCircleImg"
+											width={120}
+											height={120}
+										/>
+									</motion.div>
+								</motion.div>
+							</motion.div>
+						</SwiperSlide>
 					</Swiper>
 					<div className="flex w-fit gap-2 pl-10">
 						<div

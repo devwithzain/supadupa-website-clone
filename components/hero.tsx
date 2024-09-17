@@ -5,9 +5,11 @@ import Navbar from "./navbar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { arrowDown, heroCircle } from "@/public";
 
 export default function Hero() {
+	const t = useTranslations("heroContent");
 	const textRef = useRef<HTMLSpanElement | null>(null);
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -82,6 +84,13 @@ export default function Hero() {
 		}
 	};
 
+	// Reset the video position when the mouse leaves the container
+	const resetVideoPosition = () => {
+		gsap.to(plane1.current, { x: 0, y: 0, duration: 0.5, ease: "power3.out" });
+		xForce = 0;
+		yForce = 0;
+	};
+
 	return (
 		<div className="w-full min-h-screen flex flex-col items-center justify-center padding-x gap-10">
 			<Navbar />
@@ -89,7 +98,7 @@ export default function Hero() {
 				className="flex flex-col justify-start w-full"
 				ref={containerRef}>
 				<h1 className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight">
-					Welcome to the world of
+					{t("welcome-to-the-world-of")}
 				</h1>
 				<span
 					className="flex text-[250px] text-[#9FE870] font-bold leading-[200px] tracking-tighter mx-auto whitespace-nowrap text-center mt-20"
@@ -112,9 +121,8 @@ export default function Hero() {
 			</div>
 			<div
 				className="w-full flex flex-col gap-10 relative"
-				onMouseMove={(e) => {
-					manageMouseMove(e);
-				}}>
+				onMouseMove={manageMouseMove}
+				onMouseLeave={resetVideoPosition}>
 				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
 					<motion.video
 						ref={plane1}
@@ -171,22 +179,22 @@ export default function Hero() {
 							alt="arrowDownImg"
 							width={20}
 							height={20}
+							className="h-fit"
 						/>
 						<h1 className="whitespace-nowrap text-[20px] uppercase text-[#9FE870] font-normal leading-tight tracking-tight rotate-90 absolute -bottom-5 -left-[73px]">
-							start exploring
+							{t("start")}
 						</h1>
 					</div>
 					<div className="flex flex-col gap-5">
-						<h1 className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight">
-							Where the journey of discovery is as exciting <br /> as the
-							destination.
-						</h1>
-
+						<h1
+							className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight"
+							dangerouslySetInnerHTML={{ __html: t("where-the-journey") }}
+						/>
 						<div className="w-fit flex flex-col gap-2">
 							<Link
 								className="text-[18px] text-secondary font-normal leading-tight tracking-tight"
 								href="/">
-								Let&apos;s build good companies
+								{t("lets-build")}
 							</Link>
 							<div className="w-full h-[1px] rounded-lg bg-secondary" />
 						</div>

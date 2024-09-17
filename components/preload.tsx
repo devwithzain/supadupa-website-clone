@@ -51,7 +51,7 @@ export default function PreLoad() {
 								delay: 0.5,
 								ease: [0.76, 0, 0.24, 1],
 							}}
-							className="text-[#163300] text-[60px] leading-tight tracking-tight font-medium">
+							className="text-[#163300] text-[40px] leading-tight tracking-tighter font-medium">
 							Let&apos;s Start
 						</motion.p>
 						<motion.img
@@ -73,7 +73,7 @@ export default function PreLoad() {
 								delay: 0.5,
 								ease: [0.76, 0, 0.24, 1],
 							}}
-							className="text-[#163300] text-[60px] leading-tight tracking-tight font-medium">
+							className="text-[#163300] text-[40px] leading-tight tracking-tighter font-medium">
 							Something good
 						</motion.p>
 					</motion.div>

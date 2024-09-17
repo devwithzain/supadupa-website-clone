@@ -1,0 +1,94 @@
+{
+	"navbarContent": {
+		"our-ambition": "Our ambition",
+		"what-we-do": "What we do",
+		"transformation": "Transformation",
+		"our-impact": "Our impact",
+		"get-in-touch": "Get in touch"
+	},
+	"heroContent": {
+		"welcome-to-the-world-of": "Welcome to the world of",
+		"where-the-journey": "Where the journey of discovery is as exciting <br/> as the destination.",
+		"lets-build": "Let's build good companies",
+		"start": "start exploring"
+	},
+	"journeyContent": {
+		"journeyContent": "At Supa Dupa we help companies on their journey to do good business in a sustainable way. Because good business leads to a future."
+	},
+	"companiesContent": {
+		"companiesHeading": "At the heart of every business lies a story waiting to be unfolded — a narrative interwoven with purpose and the joy of positive impact. This is why we believe businesses can be powerful forces for positive change, shaping a more sustainable and meaningful future.",
+		"companiesPara": "Good companies are profitable, able to adapt to their ever-changing surroundings and have a healthy culture of people working together towards a same goal. And, if possible, having a positive impact on society and our planet, leaving a legacy for generations to come.",
+		"companiesPara1": "At the heart of every business lies a story waiting to be unfolded — a narrative interwoven with purpose and the joy of positive impact. This is why we believe businesses can be powerful forces for positive change, shaping a more sustainable and meaningful future.",
+		"companiesPara2": "At the heart of every business lies a story waiting to be unfolded — a narrative interwoven with purpose and the joy of positive impact. This is why we believe businesses can be powerful forces for positive change, shaping a more sustainable and meaningful future."
+	},
+	"whatwedoContent": {
+		"whatwedoHeading": "Together we will look at your organization through four lenses of expertise: Business <br /> development, Branding, Sustainability and People & Culture. We help organizations <br /> evolve their value proposition to generate sustainable business.",
+		"title1": "SDG, ESG, B-corp & Steward Ownership",
+		"heading1": "Business",
+		"heading2": "Development",
+		"para1": "Implementing next generation business models & frameworks that drive positive change for your organization.",
+		"href1": "Book an inspiration workshop",
+		"bgColor1": "#260A2F",
+		"textColor1": "#FFD7EF",
+		"linkColor1": "#FFC091",
+		"title2": "Brand Strategy, Creative concepts & Campaigns",
+		"heading3": "Purpose driven",
+		"heading4": "brands & campaigns",
+		"para2": "Helping companies to find their purpose, define their brand and amplify their story through creative concepts, (digital) experiences and campaigns.",
+		"href2": "Book an inspiration workshop",
+		"bgColor2": "#9FE870",
+		"textColor2": "#260A2F",
+		"linkColor2": "#260A2F",
+		"title3": "Sustainable strategy & Program management",
+		"heading5": "Programs for",
+		"heading6": "sustainability",
+		"para3": "Together we craft people-driven sustainability programs to foster transformative change in your organization, integrating sustainable practices into strategies, business models and day-to-day decision making.",
+		"href3": "Book an inspiration workshop",
+		"bgColor3": "#163300",
+		"textColor3": "#9BE36D",
+		"linkColor3": "#FFC091",
+		"title4": "Human flourishing, Internal branding & Recruitment",
+		"heading7": "People &",
+		"heading8": "Culture",
+		"para4": "Transforming organizations into purpose-driven brands by cultivating a strong internal culture, uniting individuals with shared values, and deeply engaging employees for a unified, impactful and flourishing workplace.",
+		"href4": "Book an inspiration workshop",
+		"bgColor4": "#320707",
+		"textColor4": "#FFD7EF",
+		"linkColor4": "#FFC091"
+	},
+	"sliderContent": {
+		"sliderHeading1": "Pioneers for the new normal",
+		"sliderHeading2": "Business transformation is a journey that demands time, space and a contagious dose of positive energy.",
+		"sliderHeading3": "Our philosophy is that everyone knows their destination; sometimes, you just need a guide who knows the way to get there. With our transformation journey process, we tailor a unique path aligned with your company's specific needs.",
+		"title1": "Explore.",
+		"heading1": "From Worldview to Workplace.",
+		"para1": "In the initial phase, we take a panoramic view, examining global dynamics to understand the larger context and drivers of change. Starting from this broad perspective, we zoom in on your specific industry and organization. Our goal is not only to understand the global, industry and organizational landscapes but also to pave the way for 'new ways of working.' We aim to create a dynamic space that invites innovative initiatives to take root, fostering an environment where fresh ideas and approaches can flourish.",
+		"title2": "Define.",
+		"heading2": "Collaborate, converge & create.",
+		"para2": "Following exploration, we work closely to define a desired solution for your challenge. It doesn't matter if need a new strategy, brand or program. Our method is tailored to work collaboratively, align visions and discover new paths on a strategic level. Most importantly, we define a path that aligns with your company's vision, purpose and desired impact on both a local and global scale.",
+		"title3": "Onboard.",
+		"heading3": "Strategic Smarts Meet Operational Arts.",
+		"para3": "During this phase we orchestrate a smooth onboarding process, leading your team through essential transitions, skill enhancements, and cultural shifts essential for embracing and embodying the purpose-driven transformation. Crucially, we establish a connection between the strategic vision and the tactical and operational levels within the organization.",
+		"title4": "Refine.",
+		"heading4": "Connecting strategy with operations.",
+		"para4": "Once alignment is achieved across the strategic, tactical, and operational levels, it becomes crucial to refine and integrate feedback from the team into the strategy. This ensures an approach that is supported by every stakeholder in the company.",
+		"title5": "Activate.",
+		"heading5": "This is where the magic starts.",
+		"para5": "We activate your journey and amplify your story with creative concepts, digital experiences, and campaigns. We bring your purpose-driven initiatives to life, creating tangible actions that positively impact your business and community. Utilizing our innovative Transformation Sprint method, rooted in Systemic Transition Management principles, we implement iterative short bursts of positive change that help your team make the necessary transition."
+	},
+	"ourImpactContent": {
+		"ourImpactHeading1": "Our Impact",
+		"ourImpactHeading2": "We love collaborating with good people, family-owned businesses, and B-Corps!",
+		"title1": "Supa Dupa is a great strategic partner, bringing inspiration, ideas and advice that advance Hartman's strategy, offering practical guidance for tactical and operational implementation. Creative and innovative, their approach is closely aligned with the brand's vision, our organizational needs and available resources.",
+		"heading1": "Stefanie Sijtsma Semmekrot",
+		"para1": "Director Marketing & Category Management",
+		"title2": "It's a joy to work with Supa Dupa as an implementation partner for the Harvard Human Flourishing Program. With a global network of institutions we harness data from 125+ countries, empowering organizations with tangible insights on their journey to drive positive change.",
+		"heading2": "Paulien Olde Bijvank",
+		"para2": "Project Lead & Researcher - Saxion Living Lab"
+	},
+	"footerContent": {
+		"footerHeading1": "Everybody knows where they want to go. But sometimes you need a guide who knows how to get there.",
+		"footerHeading2": "Let’s connect on purpose and explore your journey together.",
+		"footerBtn": "Start your journey"
+	}
+}

@@ -8,3 +8,4 @@ export { default as Journey } from "./journey";
 export { default as Whatwedo } from "./whatwedo";
 export { default as Card } from "./wwd-cards";
 export { default as Collaboration } from "./collaboration";
+export { default as TextHover } from "./text-hover";
