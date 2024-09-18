@@ -80,14 +80,13 @@ export default function Navbar() {
 										animate={{ opacity: 1 }}
 										exit={{ opacity: 0 }}>
 										{links.map((link) => (
-											<div key={link.id}>
-												<Link
-													href={`#${link.href}`}
-													className="text-[16px] font-semibold capitalize text-[#260A2F] bg-secondary leading-tight tracking-tight"
-													onClick={() => setActive(!active)}>
-													{t(link.href)}
-												</Link>
-											</div>
+											<Link
+												key={link.id}
+												href={`#${link.href}`}
+												className="text-[16px] font-semibold capitalize text-[#260A2F] bg-secondary leading-tight tracking-tight"
+												onClick={() => setActive(!active)}>
+												{t(link.href)}
+											</Link>
 										))}
 									</motion.div>
 								)}

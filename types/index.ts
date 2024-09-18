@@ -26,3 +26,13 @@ export type Tcardsprops = {
    progress: MotionValue<number>,
    range?: any,
 };
+
+export type TParagraphProps = {
+   paragraph: string;
+};
+
+export type TWordProps = {
+   children: string;
+   progress: MotionValue<number>;
+   range: number[];
+};

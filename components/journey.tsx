@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import { Words } from "@/components";
 import { useTranslations } from "next-intl";
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 
@@ -20,9 +21,7 @@ export default function Journey() {
 			style={{ scale: scaleSmooth }}
 			ref={container}>
 			<div className="w-[70%] h-full flex items-center justify-center">
-				<h1 className="text-[100px] text-[#260A2F] font-bold leading-none tracking-tight text-center">
-					{t("journeyContent")}
-				</h1>
+				<Words paragraph={t("journeyContent")} />
 			</div>
 			<div className="w-full h-full absolute">
 				<div className="absolute right-24 -bottom-10">

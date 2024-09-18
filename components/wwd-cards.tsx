@@ -12,20 +12,41 @@ import {
 } from "@/public";
 
 export default function Card() {
-	const container = useRef(null);
+	const container1 = useRef(null);
+	const container2 = useRef(null);
+	const container3 = useRef(null);
+	const container4 = useRef(null);
 	const t = useTranslations("whatwedoContent");
 
-	const { scrollYProgress } = useScroll({
-		target: container,
+	const { scrollYProgress: scrollYProgress1 } = useScroll({
+		target: container1,
 		offset: ["start end", "start start"],
 	});
 
-	const imageScale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+	const { scrollYProgress: scrollYProgress2 } = useScroll({
+		target: container2,
+		offset: ["start end", "start start"],
+	});
+
+	const { scrollYProgress: scrollYProgress3 } = useScroll({
+		target: container3,
+		offset: ["start end", "start start"],
+	});
+
+	const { scrollYProgress: scrollYProgress4 } = useScroll({
+		target: container4,
+		offset: ["start end", "start start"],
+	});
+
+	const imageScale1 = useTransform(scrollYProgress1, [0, 1], [0.7, 1]);
+	const imageScale2 = useTransform(scrollYProgress2, [0, 1], [0.7, 1]);
+	const imageScale3 = useTransform(scrollYProgress3, [0, 1], [0.7, 1]);
+	const imageScale4 = useTransform(scrollYProgress4, [0, 1], [0.7, 1]);
 
 	return (
 		<>
 			<div
-				ref={container}
+				ref={container1}
 				className="h-auto flex items-center justify-center sticky top-40 w-full">
 				<motion.div
 					style={{
@@ -69,7 +90,7 @@ export default function Card() {
 					</div>
 					<motion.div
 						className="w-1/2 h-full flex items-center justify-center"
-						style={{ scale: imageScale }}>
+						style={{ scale: imageScale1 }}>
 						<Image
 							src={whatwedoImg1}
 							alt="whatwedoImg"
@@ -79,7 +100,7 @@ export default function Card() {
 				</motion.div>
 			</div>
 			<div
-				ref={container}
+				ref={container2}
 				className="h-auto flex items-center justify-center sticky top-40 w-full">
 				<motion.div
 					style={{
@@ -123,7 +144,7 @@ export default function Card() {
 					</div>
 					<motion.div
 						className="w-1/2 h-full flex items-center justify-center"
-						style={{ scale: imageScale }}>
+						style={{ scale: imageScale2 }}>
 						<Image
 							src={whatwedoImg2}
 							alt="whatwedoImg"
@@ -133,7 +154,7 @@ export default function Card() {
 				</motion.div>
 			</div>
 			<div
-				ref={container}
+				ref={container3}
 				className="h-auto flex items-center justify-center sticky top-40 w-full">
 				<motion.div
 					style={{
@@ -177,7 +198,7 @@ export default function Card() {
 					</div>
 					<motion.div
 						className="w-1/2 h-full flex items-center justify-center"
-						style={{ scale: imageScale }}>
+						style={{ scale: imageScale3 }}>
 						<Image
 							src={whatwedoImg3}
 							alt="whatwedoImg"
@@ -187,7 +208,7 @@ export default function Card() {
 				</motion.div>
 			</div>
 			<div
-				ref={container}
+				ref={container4}
 				className="h-auto flex items-center justify-center sticky top-40 w-full">
 				<motion.div
 					style={{
@@ -231,7 +252,7 @@ export default function Card() {
 					</div>
 					<motion.div
 						className="w-1/2 h-full flex items-center justify-center"
-						style={{ scale: imageScale }}>
+						style={{ scale: imageScale4 }}>
 						<Image
 							src={whatwedoImg4}
 							alt="whatwedoImg"

@@ -9,3 +9,4 @@ export { default as Whatwedo } from "./whatwedo";
 export { default as Card } from "./wwd-cards";
 export { default as Collaboration } from "./collaboration";
 export { default as TextHover } from "./text-hover";
+export { default as Words } from "./words";
