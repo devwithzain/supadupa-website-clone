@@ -19,6 +19,6 @@ body {
 
 @layer utilities {
 	.padding-x {
-		@apply px-[30px];
+		@apply px-[30px] xm:px-[20px] sm:px-[20px];
 	}
 }

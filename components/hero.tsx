@@ -84,7 +84,6 @@ export default function Hero() {
 		}
 	};
 
-	// Reset the video position when the mouse leaves the container
 	const resetVideoPosition = () => {
 		gsap.to(plane1.current, { x: 0, y: 0, duration: 0.5, ease: "power3.out" });
 		xForce = 0;
@@ -97,11 +96,11 @@ export default function Hero() {
 			<div
 				className="flex flex-col justify-start w-full"
 				ref={containerRef}>
-				<h1 className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight">
+				<h1 className="text-[24px] xm:text-lg sm:text-lg text-[#9FE870] font-normal leading-tight tracking-tight">
 					{t("welcome-to-the-world-of")}
 				</h1>
 				<span
-					className="flex text-[250px] text-[#9FE870] font-bold leading-[200px] tracking-tighter mx-auto whitespace-nowrap text-center mt-20"
+					className="flex text-[250px] text-[#9FE870] font-bold leading-[200px] sm:leading-[75px] xm:leading-[75px] tracking-tighter mx-auto whitespace-nowrap text-center mt-20 xm:mt-0 sm:mt-0"
 					ref={textRef}>
 					{"SupaDupa".split("").map((item: string, i: number) => (
 						<motion.p
@@ -123,7 +122,7 @@ export default function Hero() {
 				className="w-full flex flex-col gap-10 relative"
 				onMouseMove={manageMouseMove}
 				onMouseLeave={resetVideoPosition}>
-				<div className="w-[600px] h-[400px] absolute left-64  rounded-lg">
+				<div className="w-[600px] h-[400px] sm:w-full xm:w-full sm:h-[300px] xm:h-[300px] xm:left-0 sm:left-0 xm:static sm:static absolute left-64  rounded-lg">
 					<motion.video
 						ref={plane1}
 						initial={{ y: 20, opacity: 0.5, scale: 0.5 }}
@@ -147,7 +146,7 @@ export default function Hero() {
 							duration: 20,
 							ease: "linear",
 						}}
-						className="flex items-center absolute top-36 -left-16">
+						className="flex items-center absolute top-36 -left-16 xm:hidden sm:hidden">
 						<Image
 							src={heroCircle}
 							alt="heroCircleImg"
@@ -170,10 +169,10 @@ export default function Hero() {
 						delay: 0.5,
 						ease: "easeInOut",
 					}}
-					className="w-full mt-20"
+					className="w-full mt-20 sm:mt-0 xm:mt-0"
 				/>
 				<div className="w-full flex justify-between relative">
-					<div className="flex flex-col gap-5 relative">
+					<div className="flex flex-col gap-5 relative xm:hidden sm:hidden">
 						<Image
 							src={arrowDown}
 							alt="arrowDownImg"
@@ -187,7 +186,7 @@ export default function Hero() {
 					</div>
 					<div className="flex flex-col gap-5">
 						<h1
-							className="text-[24px] text-[#9FE870] font-normal leading-tight tracking-tight"
+							className="text-[24px] xm:text-lg sm:text-lg text-[#9FE870] font-normal leading-tight tracking-tight"
 							dangerouslySetInnerHTML={{ __html: t("where-the-journey") }}
 						/>
 						<div className="w-fit flex flex-col gap-2">

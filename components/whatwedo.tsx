@@ -33,14 +33,14 @@ export default function Whatwedo() {
 				titile2="What we do"
 			/>
 			<div className="w-full flex items-center justify-center">
-				<div className="w-[80%]">
+				<div className="w-[80%] xm:w-full sm:w-full xm:padding-x sm:padding-x">
 					<p
-						className="text-[25px] text-[#260A2F] leading-normal tracking-tight"
+						className="text-[22px] text-[#260A2F] leading-tight tracking-tight"
 						dangerouslySetInnerHTML={{ __html: t("whatwedoHeading") }}
 					/>
 				</div>
 			</div>
-			<div className="w-full padding-x py-20">
+			<div className="w-full padding-x py-20 xm:py-10 sm:py-10">
 				<Card />
 			</div>
 		</div>

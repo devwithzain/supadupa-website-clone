@@ -39,7 +39,7 @@ export default function PreLoad() {
 			{dimension.width > 0 && (
 				<>
 					<motion.div
-						className="flex gap-10 items-center absolute z-10 overflow-hidden"
+						className="flex gap-10 items-center absolute z-10 overflow-hidden sm:gap-3 xm:gap-3"
 						variants={opacity}
 						initial="initial"
 						animate="enter">
@@ -51,7 +51,7 @@ export default function PreLoad() {
 								delay: 0.5,
 								ease: [0.76, 0, 0.24, 1],
 							}}
-							className="text-[#163300] text-[40px] leading-tight tracking-tighter font-medium">
+							className="text-[#163300] text-[40px] xm:text-[20px] sm:text-[20px] leading-tight tracking-tighter font-medium">
 							Let&apos;s Start
 						</motion.p>
 						<motion.img
@@ -63,7 +63,7 @@ export default function PreLoad() {
 							}}
 							src="/loadingImg.svg"
 							alt="loadingImg"
-							className="w-[250px] h-[250px]"
+							className="w-[250px] h-[250px] xm:w-20 sm:w-20 xm:h-20 sm:h-20"
 						/>
 						<motion.p
 							initial={{ y: 200 }}
@@ -73,7 +73,7 @@ export default function PreLoad() {
 								delay: 0.5,
 								ease: [0.76, 0, 0.24, 1],
 							}}
-							className="text-[#163300] text-[40px] leading-tight tracking-tighter font-medium">
+							className="text-[#163300] text-[40px] xm:text-[20px] sm:text-[20px] leading-tight tracking-tighter font-medium">
 							Something good
 						</motion.p>
 					</motion.div>

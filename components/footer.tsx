@@ -11,20 +11,20 @@ export default function Footer() {
 		<>
 			<div
 				id="get-in-touch"
-				className="w-full h-screen flex flex-col items-center padding-x justify-between">
+				className="w-full h-screen flex flex-col items-center padding-x justify-between pt-5">
 				<Marquee
 					titile1="Get in touch"
 					titile2="Get in touch"
 					className="text-[#ffeb69]"
 				/>
-				<div className="w-[80%] flex flex-col gap-10">
+				<div className="w-[80%] flex flex-col gap-10 xm:w-full sm:w-full">
 					<div>
-						<h1 className="text-[60px] text-[#ffeb69] font-bold leading-[62px] tracking-tight text-center">
+						<h1 className="text-[60px] xm:text-[40px] sm:text-[40px] xm:leading-[40px] sm:leading-[40px] text-[#ffeb69] font-bold leading-[62px] tracking-tight text-center xm:text-left sm:text-left">
 							{t("footerHeading1")}
 						</h1>
 					</div>
 					<div>
-						<p className="text-[25px] text-[#ffeb69] leading-normal tracking-tight text-center">
+						<p className="text-[25px] text-[#ffeb69] leading-normal tracking-tight text-center xm:text-left sm:text-left">
 							{t("footerHeading2")}
 						</p>
 					</div>
@@ -44,8 +44,8 @@ export default function Footer() {
 						</button>
 					</div>
 				</div>
-				<div className="w-full flex justify-between gap-5 py-10">
-					<div className="w-1/2 flex gap-5 justify-between">
+				<div className="w-full flex justify-between gap-5 py-10 xm:flex-col sm:flex-col">
+					<div className="w-1/2 xm:w-full sm:w-full flex gap-5 justify-between xm:flex-col sm:flex-col">
 						<div className="flex flex-col gap-5">
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
@@ -91,7 +91,7 @@ export default function Footer() {
 							</div>
 						</div>
 					</div>
-					<div className="w-[30%]">
+					<div className="w-[30%] xm:w-full sm:w-full">
 						<div className="flex flex-col gap-10">
 							<div className="flex flex-col">
 								<p className="text-[16px] text-[#9FE870] leading-tight tracking-tight">
@@ -107,7 +107,7 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="w-full flex flex-col overflow-hidden">
+				<div className="w-full flex flex-col">
 					<motion.div
 						initial={{ borderTopWidth: 0, width: "0%" }}
 						viewport={{ once: true }}
@@ -133,7 +133,7 @@ export default function Footer() {
 								duration: 1,
 								ease: "easeInOut",
 							}}
-							className="text-[#9FE870] text-sm">
+							className="text-[#9FE870] text-sm overflow-hidden">
 							Supa Dupa 2024
 						</motion.h2>
 						<motion.h2
@@ -146,7 +146,7 @@ export default function Footer() {
 								duration: 1,
 								ease: "easeInOut",
 							}}
-							className="text-[#9FE870] text-sm">
+							className="text-[#9FE870] text-sm overflow-hidden">
 							Privacy Statement
 						</motion.h2>
 					</div>

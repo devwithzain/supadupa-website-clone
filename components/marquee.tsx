@@ -17,7 +17,7 @@ export default function Marquee({
 	const rotate = useTransform(scrollYProgress, [0, 1], [0, 300]);
 	return (
 		<div
-			className="w-full padding-x py-10"
+			className="w-full padding-x py-10 xm:hidden sm:hidden"
 			ref={container}>
 			<motion.div
 				style={{ x: sc }}

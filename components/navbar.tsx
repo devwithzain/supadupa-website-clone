@@ -38,12 +38,13 @@ export default function Navbar() {
 							alt="supadupa logo"
 							width={100}
 							height={100}
+							className="xm:w-[70px] sm:w-[70px]"
 						/>
 					</Link>
 				</div>
-				<div className="flex gap-x-[20px]">
+				<div className="flex gap-x-4">
 					<button
-						className="text-[17px] font-semibold uppercase text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-6 py-3"
+						className="text-[17px] font-semibold uppercase text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-6 py-3 xm:py-2 sm:py-2 xm:px-4 sm:px-4"
 						onClick={onSelectChange}
 						disabled={isPending}>
 						{currentLocale === "nl" ? "en" : "nl"}
@@ -51,14 +52,14 @@ export default function Navbar() {
 
 					<div className="relative">
 						<button
-							className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3 group"
+							className="flex gap-2 items-center text-[17px] font-semibold capitalize text-[#260A2F] bg-secondary rounded-full leading-tight tracking-tight px-4 py-3 xm:py-2 sm:py-2 xm:px-4 sm:px-4 group"
 							onClick={() => setActive(!active)}>
 							<Image
 								src={blackCircle}
 								alt="blackCircle"
 								width={20}
 								height={20}
-								className="group-hover:rotate-[60deg] transition-all duration-300 ease-linear"
+								className="group-hover:rotate-[60deg] transition-all duration-300 ease-linear xm:hidden sm:hidden"
 							/>
 							<TextHover
 								titile1="Menu"
